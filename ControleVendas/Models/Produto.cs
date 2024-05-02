@@ -22,12 +22,6 @@ namespace ControleVendas.Models
         [ScaffoldColumn(false)]
         [Display(Name = "Data de Cadastro")]
         [DataType(DataType.Date)]
-        public DateTime DataCadastro { get; set; }
-
-        public Produto()
-        {
-            DataCadastro = DateTime.Now;
-        }
-
+        public DateTime DataCadastro { get; set; } = DateTime.Now;
     }
 }

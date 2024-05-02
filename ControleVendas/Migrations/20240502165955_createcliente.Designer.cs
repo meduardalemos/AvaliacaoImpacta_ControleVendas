@@ -4,6 +4,7 @@ using ControleVendas.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleVendas.Migrations
 {
     [DbContext(typeof(ControleVendasContext))]
-    partial class ControleVendasContextModelSnapshot : ModelSnapshot
+    [Migration("20240502165955_createcliente")]
+    partial class createcliente
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,8 +40,8 @@ namespace ControleVendas.Migrations
 
                     b.Property<string>("CEP")
                         .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
+                        .HasMaxLength(9)
+                        .HasColumnType("nvarchar(9)");
 
                     b.Property<string>("Cidade")
                         .IsRequired()
@@ -81,15 +84,10 @@ namespace ControleVendas.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Senha")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
-
                     b.Property<string>("Telefone")
                         .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("ClienteId");
 

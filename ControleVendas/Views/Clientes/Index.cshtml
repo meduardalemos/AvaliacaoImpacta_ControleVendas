@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ControleVendas.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="d-flex justify-content-between">
+    <h2>Lista de clientes</h2>
+    <a asp-action="Create" class="btn btn-success">Cadastrar novo cliente</a>
+</div>
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CpfCnpj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Senha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CEP)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CpfCnpj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Senha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CEP)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.ClienteId" class="btn btn-warning white-text btn-sm"> <i class="bi bi-pencil-fill"></i> Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.ClienteId" class="btn btn-primary white-text btn-sm"><i class="bi bi-info-circle-fill"></i> Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ClienteId" class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i> Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

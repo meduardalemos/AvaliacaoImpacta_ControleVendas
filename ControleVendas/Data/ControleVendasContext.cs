@@ -17,5 +17,7 @@ namespace ControleVendas.Data
         public DbSet<ControleVendas.Models.Produto> Produto { get; set; } = default!;
         public DbSet<ControleVendas.Models.Funcionario> Funcionario { get; set; } = default!;
         public DbSet<ControleVendas.Models.Cliente> Cliente { get; set; } = default!;
+        public DbSet<ControleVendas.Models.Acesso> Acesso { get; set; } = default!;
+        public DbSet<ControleVendas.Models.Pedido> Pedido { get; set; } = default!;
     }
 }

@@ -153,5 +153,6 @@ namespace ControleVendas.Controllers
         {
             return _context.Cliente.Any(e => e.ClienteId == id);
         }
+
     }
 }

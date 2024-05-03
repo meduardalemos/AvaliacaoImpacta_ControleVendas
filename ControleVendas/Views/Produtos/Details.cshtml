@@ -9,27 +9,27 @@
 <div>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class = "col-md-1">
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-md-5">
             @Html.DisplayFor(model => model.Nome)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-md-1">
             @Html.DisplayNameFor(model => model.Preco)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-md-2">
             @Html.DisplayFor(model => model.Preco)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-md-1">
             @Html.DisplayNameFor(model => model.Estoque)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-md-2">
             @Html.DisplayFor(model => model.Estoque)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ProdutoID">Edit</a> |
-    <a asp-action="Index">Voltar</a>
+    <a asp-action="Edit" asp-route-id="@Model?.ProdutoID" class="btn btn-primary">Editar</a> |
+    <a asp-action="Index" class="btn btn-warning white-text">Voltar</a>
 </div>
